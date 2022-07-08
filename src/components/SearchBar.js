@@ -1,6 +1,10 @@
 import React from "react";
 
-function SearchBar({ search, searchBar }) {
+function SearchBar({ search, searchBar, handleCheck, checked }) {
+  function check(e) {
+    handleCheck(e);
+  }
+
   return (
     <div className="search">
       <input
@@ -9,7 +13,9 @@ function SearchBar({ search, searchBar }) {
         value={search}
         onChange={searchBar}
       />
-      {/* For the advanced deliverables: add a checkbox to allow sorting the planeteer */}
+      <p />
+      "Sort by age"
+      <input type="checkbox" name="check" onChange={check} checked={checked} />
     </div>
   );
 }
